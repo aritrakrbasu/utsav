@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 *
 {
 	margin:0px;
@@ -67,7 +68,7 @@ a:hover
 	right:20px;
 	position:absolute;
 	text-transform:uppercase;
-	opacity:0.3;
+	opacity:1;
 	color:#333 !important;
 	letter-spacing:20px;
 	margin:auto auto;
@@ -125,6 +126,7 @@ a:hover
 .social-media-icon
 {
 	list-style:none;
+	background:transparent!important;
 }
 .social-media-icon > li 
 {
@@ -265,12 +267,15 @@ h1.heading-back
 {
 	margin-bottom:10px;
 }
-.contact-info li .fas,.fab
+.contact-info li .fas,.contact-info li .fab
 {
 	font-size:30px;
-	opacity:0.3;
-	margin-right:20px;
-	margin-left:20px;
+	color:#ddd;	
+	padding:20px;
+	padding-left:20px;
+	background:#151A1E;
+	border-radius:100%;
+	margin-right:10px;
 }
 footer
 {
@@ -312,7 +317,143 @@ footer
 	opacity:0.4;
 	position:absolute;
 }
+.nav-container
+{
+	height:100vh;
+	position:fixed;
+	overflow:hidden;
+	z-index:9999;
+	width:0vw;
+	
+}
+.nav-active
+{
+	animation:nav-animation 2s ease;
+	width:100vw;
 
+}
+.nav-notactive
+{
+	animation:nav-animation-not 2s ease;
+	width:0vw;
+}
+@keyframes nav-animation  { /* from 0 to full opacity */
+    from {width:0vw;}
+   to {width:100vw;}
+}
+@keyframes nav-animation-not  { /* from 0 to full opacity */
+   from {width:100vw;}
+   to {width:0px;}
+}
+ul.nav
+{
+	font-size:40px;
+	font-weight:bold;
+	margin-left:30vw;
+	padding-top:5vw !important;
+	white-space: nowrap;
+	width:20%;
+}
+ul.nav a
+{
+	display:block !important;
+}
+ul.nav li
+{
+	clear:both;
+	line-height:80px;
+	letter-spacing:10px;
+	display:block !important;
+	background: linear-gradient(to top, black 50%, white 50%);
+	background-size: 100% 190%;
+	background-repeat:no-repeat;
+	background-position: left top;
+	transition: all .5s ease;
+	margin-bottom:20px;
+	line-height:70px;
+	text-transform:capitalize;
+}
+ul.nav li:hover
+{
+	background-position: left bottom;
+	color:#fff;
+	background-size: 100% 200%;
+}
+ul.nav li:before
+{
+	content:'\f105';
+	font-family: "Font Awesome 5 Free"; 
+		padding-left:10px;
+
+}
+.logo-holder-image-active img
+{
+	width:400px;
+	position:absolute;
+}
+.close-nav
+{
+	padding:10px;
+	font-size:50px;
+	position:absolute;
+	right:20px;
+	opacity:0.3;
+	transition:all 0.25s ease;
+}
+.close-nav:hover
+{
+	opacity:1;
+}
+.food-menu
+{
+	margin-left:10px;
+	list-style:none;
+	columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+.food-menu li span:before
+{
+	content:'~';
+	display:inline-block;
+	color:#FD4008
+}
+.food-menu li span
+{
+	float:right;
+	color:#FD4008;
+	font-family: 'Pacifico', cursive;
+	opacity:0.8;
+}
+h1.food-menu-heading
+{
+	display:block !important;
+	font-size:40px;
+	text-align:center;
+	margin-top:50px;
+	margin-bottom:50px;
+	font-weight:bold;
+	opacity:0.3;
+	letter-spacing:5px;
+	
+}
+h1.food-menu-heading:before
+{
+	content:'~';
+}
+h1.food-menu-heading:after
+{
+	content:'~';
+}
+.food-menu li 
+{
+	font-size:20px;
+	
+}
+.nav-icon
+{
+	z-index:9999!important;
+}
 @media only screen and (max-width: 768px)
 {
 	.header-section-item
@@ -392,6 +533,19 @@ footer
 	{
 		font-size:40px !important;
 	}
+	ul.nav
+	{
+		margin-left:20vw;
+		margin-top:20vw;
+	}
+	.food-menu li
+	{
+		font-size:15px;
+	}
+	h1.food-menu-heading
+	{
+		font-size:20px;
+	}
 }
 @media (min-width: 768px) and (max-width: 1024px) 	
 {
@@ -432,6 +586,11 @@ footer
 	{
 		font-size:50px !important;
 	}
+	ul.nav
+	{
+		margin-left:20vw;
+		margin-top:20vw;
+	}
 }
 @media only screen 
 and (min-device-width : 768px) 
@@ -450,6 +609,11 @@ and (orientation : portrait) {
 	{
 		min-height:auto !important;
 		height:auto;
+	}
+	ul.nav
+	{
+		margin-left:20vw;
+		margin-top:20vw;
 	}
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 325px){
@@ -482,6 +646,11 @@ and (orientation : portrait) {
 	.sections
 	{
 		padding:30px 20px;
+	}
+	ul.nav
+	{
+		margin-left:20vw;
+		margin-top:20vw;
 	}
 }
 

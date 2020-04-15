@@ -11,14 +11,28 @@
 			<meta name="viewport" content="width=device-width, initial-scale=0.5">
 			</head>
 			<body>
-				<div class="conatiner-fluid header-section">
+			<div class="nav-container bg-white" id="nav">
+<div class="close-nav">
+	<a href="#" id="close-nav"><i class="fas fa-times"></i></a>
+</div>
+
+	<ul class="nav">
+		<a href="index.html"><li>Home</li></a>
+		<a href="about.html"><li> About</li></a>
+		<a href="menu.html"><li> Catering Menu</li></a>
+		<a href="gallery.html"><li> gallery</li></a>
+		<a href="contact.html"><li> contact</li></a>
+	</ul>
+
+</div>
+<div class="conatiner-fluid header-section">
 					<div class="row">
 						<div class="col-lg-7 header-section-item pt-4 pl-4">
 							<div class="col-lg-8 pl-4 ">
 								<nav>
 									<ul class="nav-icon mb-4">
 										<a href="#">
-											<i class="fa fa-bars fa-2x"></i>
+											<a href="#" id="call-nav"><i class="fas fa-bars fa-2x"></i></a>
 										</a>
 									</ul>
 								</nav>
@@ -210,9 +224,11 @@
 								</p>
 								</div>
 								<div class="col-lg-6 col-md-12 col-sm-12">
-								<iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=1B%2C%20Satish%20Mukherjee%20Road%2C%20Manoharpukur%2C%20Kalighat%2C%20Kolkata%2C%20West%20Bengal%20700026&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+								<iframe width="100%" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=1B%2C%20Satish%20Mukherjee%20Road%2C%20Manoharpukur%2C%20Kalighat%2C%20Kolkata%2C%20West%20Bengal%20700026&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 								</div>
 							</div>
+							</div>
+				
 							<footer class="bg1 text-light">
 								<div class="row">
 									<div class="col-lg-1 col-sm-2 footer-logo">
@@ -229,6 +245,43 @@
 										</ul>
 									</div>
 								</div>
+				
 							</footer>
+							   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+$('document').ready(function() {
+    $('#call-nav').click(function(e) {
+        e.preventDefault();
+       if( $('#nav').hasClass('nav-notactive'))
+	   {
+	   $('#nav').addClass('nav-active');
+	   $('#nav').removeClass('nav-notactive');
+		}else if( $('#nav').hasClass('nav-active'))
+		{
+		 $('#nav').removeClass('nav-active');
+		 $('#nav').addClass('nav-notactive');
+		}
+		else
+		{
+		 $('#nav').addClass('nav-active');
+		}
+    });
+});
+</script>
+							<script>
+$('document').ready(function() {
+    $('#close-nav').click(function(e) {
+        e.preventDefault();
+		 $('#nav').removeClass('nav-active');
+		 $('#nav').addClass('nav-notactive');
+		
+    });
+});
+</script>
 </body>
 </html>
